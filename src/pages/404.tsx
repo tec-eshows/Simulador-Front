@@ -1,8 +1,8 @@
 import { Box, Button, Flex, Highlight, Stack, Text } from '@chakra-ui/react'
 import Bg from '../assets/Rectangle4.png'
-import Image404 from '../assets/404.svg'
+
 import Link from 'next/link'
-import Image from 'next/image'
+
 export default function NotFound() {
   return (
     <Box

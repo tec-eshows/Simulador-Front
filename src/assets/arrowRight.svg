@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
-  <g id="Grupo_10229" data-name="Grupo 10229" transform="translate(-1605 -185)">
-    <g id="Elipse_1" data-name="Elipse 1" transform="translate(1605 185)" fill="#fff" stroke="#cbcbcb" stroke-width="1">
-      <circle cx="25" cy="25" r="25" stroke="none"/>
-      <circle cx="25" cy="25" r="24.5" fill="none"/>
-    </g>
-    <path id="Icon_material-navigate-next" data-name="Icon material-navigate-next" d="M15,9l-2.115,2.115L19.755,18l-6.87,6.885L15,27l9-9Z" transform="translate(1611.557 192)" fill="#1c1c1c"/>
-  </g>
-</svg>
