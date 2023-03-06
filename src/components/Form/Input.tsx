@@ -45,7 +45,7 @@ const InputBase: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
           pb="5px"
           bg={bg}
           h="40px"
-          borderRadius="8px"
+          borderRadius="6px"
           fontSize="16px"
           color="blackAlpha.900"
           _placeholder={{
@@ -60,7 +60,7 @@ const InputBase: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
           id={name}
           size="lg"
           ref={ref}
-          borderColor="white.900"
+          borderColor="gray.300"
           {...rest}
         />
         {iconRight && (
