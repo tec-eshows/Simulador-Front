@@ -74,7 +74,18 @@ const InputBase: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
           />
         )}
       </InputGroup>
-      {!!error && <FormErrorMessage>{error.message}</FormErrorMessage>}
+      {!!error && (
+        <FormErrorMessage
+          bg="whiteAlpha.900"
+          color="red"
+          maxW="380px"
+          h="30px"
+          borderRadius="6px"
+          px="12px"
+        >
+          {error.message}
+        </FormErrorMessage>
+      )}
     </FormControl>
   )
 }

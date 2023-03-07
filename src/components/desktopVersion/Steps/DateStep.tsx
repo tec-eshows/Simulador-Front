@@ -62,14 +62,12 @@ export function DateStep({ handleNextStep }: Props) {
   return (
     <Flex w="100%" h="100%" flexDir="column">
       <Text fontSize="24px" lineHeight="32px" mb="40px">
-        Por favor, escolha 3 estilos músicais em ordem de importância! Eles
-        servirão para personalizar nossa busca.
+        Quando será o seu show? Qual a data e hora?
       </Text>
       <Text>
-        A duração padrão do show pode variar de acordo com os estilos! Country,
-        Folk, Salsa, Tango, Black Music, Soul, Blues, Jazz e Cover/Tributo: 2h
-        de permanência (1h45 de show com 15min de intervalo) Outros estilos: 3h
-        de permanência (2h30 de show com 30 min de intervalo)o.
+        Vamos fazer deste show um sucesso! Para otimizar a organização dos
+        equipamentos e evitar possíveis atrasos, pedimos que os artistas cheguem
+        com 40 minutos de antecedência, no mínimo!
       </Text>
       <Flex gridGap="8px" mt="80px" mb="24px">
         <Select name="day" label="Dia" w="152px">
@@ -100,7 +98,7 @@ export function DateStep({ handleNextStep }: Props) {
       </Select>
       <Flex w="100%" h="100%" align="flex-end">
         <Button
-          title="Continuar"
+          title="Continuar cotação"
           w="380px"
           mt="80px"
           onClick={handleNextStep}

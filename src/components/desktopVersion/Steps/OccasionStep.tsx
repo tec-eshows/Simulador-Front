@@ -1,26 +1,65 @@
-import { Box, Flex, Text } from '@chakra-ui/react'
+import { Flex, Text } from '@chakra-ui/react'
+import { useState } from 'react'
 import { Button } from '../../Button'
 interface Props {
   handleNextStep: () => void
+  previewMessage: string
+  setPreviewMessage: (message) => void
 }
-export function OccasionStep({ handleNextStep }: Props) {
+export function OccasionStep({
+  handleNextStep,
+  previewMessage,
+  setPreviewMessage,
+}: Props) {
+  const [occasion, setOccasion] = useState(null)
   const ocasions = [
     {
+      id: 101,
       label: 'Aniversário',
     },
     {
+      id: 110,
       label: 'Evento universitário',
     },
     {
+      id: 109,
       label: 'Evento Escolar',
     },
     {
+      id: 104,
       label: 'Festa particular',
     },
     {
+      id: 108,
       label: 'Evento Familiar',
     },
   ]
+  function handleSelectOccasion(data) {
+    if (occasion?.id === data.id) {
+      setOccasion(null)
+    } else {
+      setOccasion(data)
+    }
+  }
+  function handleRemoveOccasion() {
+    console.log('teste')
+    setOccasion(null)
+  }
+  function submitHandler() {
+    setPreviewMessage(
+      previewMessage +
+        `vou fazer um(a)
+        <span
+        style="color:#FC4F22;text-decoration:underline;font-weight:bold;text-transform:uppercase"
+        id="name"
+      >
+        ${occasion.label}
+      </span>
+
+      </p>`,
+    )
+    handleNextStep()
+  }
   return (
     <Flex w="100%" h="100%" flexDir="column">
       <Text fontSize="24px" lineHeight="32px" mb="40px">
@@ -34,30 +73,41 @@ export function OccasionStep({ handleNextStep }: Props) {
       </Text>
       <Flex mt="24px" gridGap="24px" flexWrap="wrap">
         {ocasions.map((item) => (
-          <Box
+          <Flex
+            gridGap="6px"
             cursor="pointer"
             key={item.label}
             borderWidth={1}
-            borderColor="white.900"
+            borderColor={item.id === occasion?.id ? 'orange.900' : 'white.900'}
             borderRadius="30px"
             py="4px"
             px="12px"
-            _hover={{
-              backgroundColor: 'white.900',
-              color: 'orange.900',
-            }}
+            bg={item.id !== occasion?.id ? 'orange.900' : 'white.900'}
+            onClick={() => handleSelectOccasion(item)}
           >
-            <Text>{item.label}</Text>
-          </Box>
+            <Text color={item.id === occasion?.id ? 'orange.900' : 'white.900'}>
+              {item.label}
+            </Text>
+            {item.id === occasion?.id && (
+              <Text
+                onClick={handleRemoveOccasion}
+                color="orange.900"
+                fontWeight="bold"
+                fontSize="16px"
+              >
+                x
+              </Text>
+            )}
+          </Flex>
         ))}
       </Flex>
 
       <Flex w="100%" h="100%" align="flex-end">
         <Button
-          title="Continuar"
+          title="Continuar cotação"
           w="380px"
           mt="80px"
-          onClick={handleNextStep}
+          onClick={submitHandler}
         />
       </Flex>
     </Flex>

@@ -86,7 +86,7 @@ export function FormationStep({ handleNextStep }: Props) {
       </Flex>
       <Flex w="100%" h="100%" align="flex-end">
         <Button
-          title="Continuar"
+          title="Continuar cotação"
           w="380px"
           mt="40px"
           onClick={handleNextStep}

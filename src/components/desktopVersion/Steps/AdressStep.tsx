@@ -39,7 +39,12 @@ export function AdressStep({ handleNextStep }: Props) {
           />
         </Flex>
       </VStack>
-      <Button title="Continuar" w="380px" mt="80px" onClick={handleNextStep} />
+      <Button
+        title="Continuar cotação"
+        w="380px"
+        mt="80px"
+        onClick={handleNextStep}
+      />
     </Box>
   )
 }

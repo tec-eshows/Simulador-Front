@@ -1,26 +1,19 @@
 import { Box, Flex, Text } from '@chakra-ui/react'
+import { useEffect, useState } from 'react'
 import { Button } from '../../Button'
+import { getContent } from '../getContent'
 interface Props {
   handleNextStep: () => void
 }
 export function StylesStep({ handleNextStep }: Props) {
-  const ocasions = [
-    {
-      label: 'Aniversário',
-    },
-    {
-      label: 'Evento universitário',
-    },
-    {
-      label: 'Evento Escolar',
-    },
-    {
-      label: 'Festa particular',
-    },
-    {
-      label: 'Evento Familiar',
-    },
-  ]
+  const [styles, setStyles] = useState([])
+  useEffect(() => {
+    async function fetchStyles() {
+      const styles = await getContent.styles()
+      setStyles(styles)
+    }
+    fetchStyles()
+  }, [])
   return (
     <Flex w="100%" h="100%" flexDir="column">
       <Text fontSize="24px" lineHeight="32px" mb="40px">
@@ -34,7 +27,7 @@ export function StylesStep({ handleNextStep }: Props) {
         de permanência (2h30 de show com 30 min de intervalo)o.
       </Text>
       <Flex mt="24px" gridGap="24px" flexWrap="wrap">
-        {ocasions.map((item) => (
+        {styles.map((item) => (
           <Box
             cursor="pointer"
             key={item.label}
@@ -48,14 +41,14 @@ export function StylesStep({ handleNextStep }: Props) {
               color: 'orange.900',
             }}
           >
-            <Text>{item.label}</Text>
+            <Text>{item.DESCRICAO}</Text>
           </Box>
         ))}
       </Flex>
 
       <Flex w="100%" h="100%" align="flex-end">
         <Button
-          title="Continuar"
+          title="Continuar cotação"
           w="380px"
           mt="80px"
           onClick={handleNextStep}

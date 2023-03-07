@@ -87,7 +87,7 @@ export function ObservationStep({ handleNextStep }: Props) {
         <Textarea bg="white.900" h="80px" placeholder="Gostaria de ..." />
       </Box>
       <Flex w="100%" h="100%" align="flex-end">
-        <Button title="Continuar" w="380px" onClick={handleNextStep} />
+        <Button title="Ir para o checkout" w="380px" onClick={handleNextStep} />
       </Flex>
     </Flex>
   )

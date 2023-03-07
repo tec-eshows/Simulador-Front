@@ -11,6 +11,7 @@ export function Button({ title, bg = '#FCB040', ...rest }: Props) {
       {...rest}
       _hover={{
         backgroundColor: bg,
+        opacity: 0.7,
       }}
     >
       {title}
