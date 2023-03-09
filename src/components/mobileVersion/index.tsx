@@ -15,7 +15,14 @@ export const MobileVersion = () => {
   }
   return (
     <C.Flex direction={'column'}>
-      <MobileHeader menuPress={() => setOpen(true)} />
+      <MobileHeader
+        menuPress={() => setOpen(true)}
+        backPress={() => setStep((oldState) => oldState - 1)}
+        step={step}
+        title={
+          step === 1 ? 'Contato' : step === 2 ? 'Ocasião' : 'Estilos musicais'
+        }
+      />
       {step === 1 && <ContactStep handleNextStep={handleNextStep} />}
       {step === 2 && <OccasionStepMobile handleNextStep={handleNextStep} />}
       {step === 3 && <StylesStepsMobile handleNextStep={handleNextStep} />}

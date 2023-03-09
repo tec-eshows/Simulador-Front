@@ -43,12 +43,12 @@ export const OccasionStepMobile = ({ handleNextStep }: Props) => {
         nos contate clicando aqui!
       </C.Text>
       <C.Flex
-        h={'60vh'}
+        h={'52vh'}
         direction={'column'}
         justifyContent={'space-between'}
         mt={'24px'}
       >
-        <C.Flex direction={'column'}>
+        <C.Box>
           <SelectMobile name="occasion" w="100%">
             {occasions.map((item) => (
               <option
@@ -62,7 +62,7 @@ export const OccasionStepMobile = ({ handleNextStep }: Props) => {
               </option>
             ))}
           </SelectMobile>
-        </C.Flex>
+        </C.Box>
         <C.Button
           size="lg"
           colorScheme="yellow"
