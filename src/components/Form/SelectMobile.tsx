@@ -28,13 +28,14 @@ const SelectBase: ForwardRefRenderFunction<HTMLSelectElement, InputProps> = (
     bg = 'white.900',
     w = '138px',
     mt = 0,
+    ml = 0,
     ...rest
   },
   ref,
 ) => {
   return (
     <FormControl isInvalid={!!error} w="auto">
-      {!!label && <FormLabel mt={mt} htmlFor={name}>{label}</FormLabel>}
+      {!!label && <FormLabel mt={mt} ml={ml} htmlFor={name}>{label}</FormLabel>}
 
       <SelectChakra
         variant="flushed"
@@ -42,6 +43,7 @@ const SelectBase: ForwardRefRenderFunction<HTMLSelectElement, InputProps> = (
         color="white.900"
         colorScheme="brand"
         name={name}
+        ml={ml}
         placement='bottom-start'
         _focusVisible={{
           borderColor: 'white.900',

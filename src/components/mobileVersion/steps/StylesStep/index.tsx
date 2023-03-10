@@ -51,7 +51,7 @@ export const StylesStepsMobile = ({ handleNextStep }: Props) => {
           label={TooTipText}
         >
           <C.IconButton
-            bg="whiteAlpha.800"
+            variant='unstyled'
             aria-label="Close"
             onClick={() => {
               setToolTip(!toolTip)
