@@ -4,6 +4,7 @@ import * as C from '@chakra-ui/react'
 interface Props {
   handleNextStep: () => void
 }
+
 export const ContactStep = ({ handleNextStep }: Props) => {
   return (
     <C.Flex ml="5%" mr="5%" mt={'24px'} direction={'column'}>
@@ -24,6 +25,13 @@ export const ContactStep = ({ handleNextStep }: Props) => {
             variant={'flushed'}
             focusBorderColor="yellow.400"
             placeholder={'Digite seu nome'}
+            _placeholder={{ opacity: 1, color: 'white.900' }}
+          />
+          <C.Text mt={'24px'}>CPF/CNPJ</C.Text>
+          <C.Input
+            variant={'flushed'}
+            focusBorderColor="yellow.400"
+            placeholder={'Digite seu CPF/CNPJ'}
             _placeholder={{ opacity: 1, color: 'white.900' }}
           />
           <C.Text mt={'24px'}>Email</C.Text>
