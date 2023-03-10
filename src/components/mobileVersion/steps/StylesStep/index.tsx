@@ -15,6 +15,7 @@ export const StylesStepsMobile = ({ handleNextStep }: Props) => {
     }
     fetchStyles()
   }, [])
+
   return (
     <C.Flex ml="5%" mr="5%" mt={'24px'} direction={'column'}>
       <C.Text fontWeight={'bold'}>

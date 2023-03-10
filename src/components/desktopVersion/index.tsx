@@ -12,7 +12,7 @@ import { ObservationStep } from './Steps/ObservationStep'
 import { OccasionStep } from './Steps/OccasionStep'
 import { StylesStep } from './Steps/StylesSteps'
 export function DesktopVersion() {
-  const [step, setStep] = useState(1)
+  const [step, setStep] = useState(3)
   const [progressCount, setProgressCount] = useState(12.5)
   const [previewMessage, setPreviewMessage] = useState()
   const [formData, setFormData] = useState({})
