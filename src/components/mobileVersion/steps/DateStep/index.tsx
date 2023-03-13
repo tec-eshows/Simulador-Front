@@ -23,11 +23,16 @@ export const DateStep = ({ handleNextStep }: Props) => {
         justifyContent={'space-between'}
         mt={'24px'}
       >
-        <C.Input
-          placeholder="Selecione uma data"
-          size="md"
-          type="datetime-local"
-        />
+        <C.Box>
+          <C.Text mb='8px'>
+            Data
+          </C.Text>
+          <C.Input
+            placeholder="Selecione uma data"
+            size="md"
+            type="datetime-local"
+          />
+        </C.Box>
         <C.Button
           size="lg"
           colorScheme="yellow"

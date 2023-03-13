@@ -5,49 +5,97 @@ interface Props {
   handleNextStep: () => void
 }
 
+const types = [
+  {
+    id: 0,
+    label: 'Selecione',
+  },
+  {
+    id: 1,
+    label: 'Tenho todo o equipamento de som'
+  },
+  {
+    id: 2,
+    label: 'Não tenho todo o equipamento de som'
+  },
+]
+
 export const ObsercationStep = ({ handleNextStep }: Props) => {
   return (
     <C.Flex ml="5%" mr="5%" mt={'24px'} direction={'column'}>
       <C.Text fontWeight={'bold'}>
-        Olá, bem vindo a Eshows. Estamos animados para oferecer a você a
-        oportunidade de encontrar os melhores artistas musicais para os seus
-        eventos. Vamos começar?
+        Como você espera que o seu show seja?
+      </C.Text>
+      <C.Text>
+        Escolha 3 caracteristicas que vão definir o que você espera do seu Show. Essa informação é importante para que o você receba o artista mais alinhado com as suas expectativas.
       </C.Text>
       <C.Flex
-        h={'60vh'}
+        h={'51vh'}
         direction={'column'}
         justifyContent={'space-between'}
         mt={'24px'}
       >
         <C.Flex direction={'column'}>
-          <C.Text>Qual o seu nome?</C.Text>
-          <C.Input
-            variant={'flushed'}
-            focusBorderColor="yellow.400"
-            placeholder={'Digite seu nome'}
-            _placeholder={{ opacity: 1, color: 'white.900' }}
-          />
-          <C.Text mt={'24px'}>CPF/CNPJ</C.Text>
-          <C.Input
-            variant={'flushed'}
-            focusBorderColor="yellow.400"
-            placeholder={'Digite seu CPF/CNPJ'}
-            _placeholder={{ opacity: 1, color: 'white.900' }}
-          />
-          <C.Text mt={'24px'}>Email</C.Text>
-          <C.Input
-            variant={'flushed'}
-            focusBorderColor="yellow.400"
-            placeholder={'Digite seu email'}
-            _placeholder={{ opacity: 1, color: 'white.900' }}
-          />
-          <C.Text mt={'24px'}>Telefone para contato</C.Text>
-          <C.Input
-            variant={'flushed'}
-            focusBorderColor="yellow.400"
-            placeholder={'Digite um numero para contato'}
-            _placeholder={{ opacity: 1, color: 'white.900' }}
-          />
+          <C.Box>
+            <C.Text>
+              Primeira caracteristica
+            </C.Text>
+            <C.Select
+              variant="flushed"
+            >
+              {types.map((item) => (
+                <option
+                  key={item.id}
+                  style={{
+                    backgroundColor: 'white.900',
+                    color: 'rgba(0, 0, 0, 0.36)',
+                  }}
+                >
+                  {item.label}
+                </option>
+              ))}
+            </C.Select>
+          </C.Box>
+          <C.Box mt={'24px'}>
+            <C.Text>
+              Segunda caracteristica
+            </C.Text>
+            <C.Select
+              variant="flushed"
+            >
+              {types.map((item) => (
+                <option
+                  key={item.id}
+                  style={{
+                    backgroundColor: 'white.900',
+                    color: 'rgba(0, 0, 0, 0.36)',
+                  }}
+                >
+                  {item.label}
+                </option>
+              ))}
+            </C.Select>
+          </C.Box>
+          <C.Box mt={'24px'}>
+            <C.Text>
+              Terceira caracteristica
+            </C.Text>
+            <C.Select
+              variant="flushed"
+            >
+              {types.map((item) => (
+                <option
+                  key={item.id}
+                  style={{
+                    backgroundColor: 'white.900',
+                    color: 'rgba(0, 0, 0, 0.36)',
+                  }}
+                >
+                  {item.label}
+                </option>
+              ))}
+            </C.Select>
+          </C.Box>
         </C.Flex>
         <C.Button
           size="lg"
